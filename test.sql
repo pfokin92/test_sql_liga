@@ -1,3 +1,4 @@
+
 #Вывести список сотрудников, получающих заработную плату большую чем у непосредственного руководителя
 select employees.id,
 employees.department_id,
@@ -30,6 +31,8 @@ left join liga.employee as employees
 on  department.id=employees.department_id
 GROUP BY department.id
 having  count(employees.department_id)=0
+
+
 
 
 
