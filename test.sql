@@ -1,5 +1,5 @@
 
-#¬ывести список сотрудников, получающих заработную плату большую чем у непосредственного руководител€
+#task 1
 select employees.id,
 employees.department_id,
 employees.name as employees_name,  
@@ -12,19 +12,19 @@ join liga.employee as chieves
 on employees.chief_id=chieves.id
 where employees.salary > chieves.salary
 
-#¬ывести список сотрудников, получающих максимальную заработную плату в своем отделе
+#task 2
 select
 employees.id, employees.name, max(employees.salary) as salary
 FROM liga.employee as employees
 group by employees.department_id
 
-#¬ывести список ID отделов, количество сотрудников в которых не превышает 3 человек
+#task 3
 SELECT department_id 
 FROM liga.employee
 GROUP BY department_id
 HAVING COUNT(*) <= 3
 
-#¬ывести список ID отделов, в которых нет сотрудников
+#task 4
 SELECT department.id
 FROM liga.department as department
 left join liga.employee as employees
